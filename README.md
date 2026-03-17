@@ -1,5 +1,4 @@
 # United-Family-Medical-Center-Virtual-Front-Desk-VFD-Workflow-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
