@@ -11,188 +11,120 @@
             theme: {
                 extend: {
                     colors: {
-                        'blue-primary': '#0056D2', // Main brand blue
-                        'blue-secondary': '#E6F0FF', // Very pale background blue
-                        'blue-accent': '#007BFF', // Interative accent blue
-                        'blue-text': '#001F4D', // Deep dark blue for text
-                        'blue-muted': '#A0C4FF', // Light blue borders/details
+                        'blue-primary': '#0056D2',
+                        'blue-secondary': '#E6F0FF',
+                        'blue-accent': '#007BFF',
+                        'blue-text': '#001F4D',
+                        'blue-muted': '#A0C4FF',
                     }
                 }
             }
         }
     </script>
-    <style>
-        /* Flowchart Arrow connection logic (simplified) */
-        .card-container { position: relative; }
-        .flow-arrow {
-            position: absolute;
-            color: #A0C4FF;
-            pointer-events: none;
-        }
-        /* Connect Shift Start -> Setup -> Active Handling */
-        #arrow-start-setup { top: 7rem; left: calc(50% - 0.5rem); }
-        #arrow-setup-call { top: 15rem; left: calc(50% - 0.5rem); }
-        /* Connect Call Handling -> Core Actions */
-        #arrow-call-actions { top: 23rem; left: calc(50% - 0.5rem); }
-        /* Connect Core Actions -> Escalations */
-        #arrow-actions-escl { top: 31rem; left: calc(50% - 0.5rem); }
-        /* Connect Call Log -> (Internal workflow connection) */
-    </style>
 </head>
 <body class="bg-blue-secondary text-blue-text p-4 md:p-8">
 
     <header class="text-center mb-12">
         <h1 class="text-4xl font-bold text-blue-primary">Medical Virtual Front Desk</h1>
-        <p class="text-xl text-blue-accent mt-2">United Family Medical Center - Workflow Visualization</p>
-        <span class="inline-block mt-4 bg-white text-blue-primary font-medium px-4 py-1 rounded-full border border-blue-muted">8 AM – 5 PM EST</span>
+        <p class="text-xl text-blue-accent mt-2 uppercase tracking-wide font-medium">United Family Medical Center</p>
+        
+        <div class="flex flex-wrap justify-center gap-4 mt-6">
+            <a href="https://docs.google.com/document/d/11a2h8jLfv8HxST0fp8g5ztCp2bzGY9sP4QczfyiPfVQ/edit?tab=t.0" target="_blank" class="flex items-center gap-2 bg-blue-primary text-white px-5 py-2.5 rounded-full font-semibold shadow-md hover:bg-blue-accent transition">
+                <span>📄</span> Detailed Workflow Document
+            </a>
+            <a href="https://unitedfamilymedicalcenter.com/" target="_blank" class="flex items-center gap-2 bg-white text-blue-primary border-2 border-blue-primary px-5 py-2.5 rounded-full font-semibold shadow-md hover:bg-blue-secondary transition">
+                <span>🌐</span> Official UFMC Website
+            </a>
+        </div>
+
+        <div class="mt-6">
+            <span class="inline-block bg-white text-blue-primary font-bold px-6 py-1.5 rounded-full border border-blue-muted shadow-sm">
+                🕒 Shift: 8 AM – 5 PM EST
+            </span>
+        </div>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 card-container">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 max-w-7xl mx-auto">
 
-        <svg class="flow-arrow hidden md:block" id="arrow-start-setup" width="16" height="48" viewBox="0 0 16 48"><path fill="currentColor" d="M11 0v40h5l-8 8-8-8h5v-40h6z"/></svg>
-        <svg class="flow-arrow hidden md:block" id="arrow-setup-call" width="16" height="48" viewBox="0 0 16 48"><path fill="currentColor" d="M11 0v40h5l-8 8-8-8h5v-40h6z"/></svg>
-        <svg class="flow-arrow hidden md:block" id="arrow-call-actions" width="16" height="48" viewBox="0 0 16 48"><path fill="currentColor" d="M11 0v40h5l-8 8-8-8h5v-40h6z"/></svg>
-        <svg class="flow-arrow hidden md:block" id="arrow-actions-escl" width="16" height="48" viewBox="0 0 16 48"><path fill="currentColor" d="M11 0v40h5l-8 8-8-8h5v-40h6z"/></svg>
-
-        <div class="md:col-span-12 lg:col-span-2 bg-white p-6 rounded-2xl shadow-sm border border-blue-muted hover:border-blue-accent transition relative">
-            <div class="flex items-center gap-3 mb-4">
-                <span class="text-3xl">⏰</span>
-                <h2 class="text-2xl font-semibold text-blue-primary">08:00 EST</h2>
-            </div>
-            <p class="text-sm font-medium mb-1">Attendance Check:</p>
-            <ul class="text-sm space-y-1 list-disc list-inside text-blue-accent">
-                <li>Clockify (Time Track)</li>
-                <li>G-Chat: "Good Morning"</li>
-            </ul>
-        </div>
-
-        <div class="md:col-span-12 lg:col-span-10 bg-white p-6 rounded-2xl shadow-sm border border-blue-muted hover:border-blue-accent transition">
-            <h2 class="text-2xl font-semibold text-blue-primary mb-5 flex items-center gap-3"><span class="text-3xl">🛠️</span>System Setup & Readiness</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="bg-blue-secondary p-4 rounded-xl border border-blue-muted">
-                    <p class="font-bold text-lg text-blue-accent">RingCentral</p>
-                    <p class="text-sm mt-1">Status: <span class="text-green-600 font-bold">AVAILABLE</span> (Queue Ready)</p>
+        <div class="md:col-span-4 bg-white p-6 rounded-2xl shadow-sm border-l-8 border-blue-primary">
+            <h2 class="text-2xl font-bold text-blue-primary mb-4 flex items-center gap-2"><span>⏰</span> 08:00 AM Start</h2>
+            <div class="space-y-4">
+                <div class="p-3 bg-blue-secondary rounded-lg">
+                    <p class="font-bold text-blue-accent">Attendance Check</p>
+                    <ul class="text-sm list-disc list-inside mt-1">
+                        <li>Clockify: Clock In</li>
+                        <li>G-Chat: "Good Morning"</li>
+                    </ul>
                 </div>
-                <div class="bg-blue-secondary p-4 rounded-xl border border-blue-muted">
-                    <p class="font-bold text-lg text-blue-accent">Google Meet</p>
-                    <p class="text-sm mt-1">Join ongoing Nurse Call (Active Listening)</p>
-                </div>
-                <div class="bg-blue-secondary p-4 rounded-xl border border-blue-muted">
-                    <p class="font-bold text-lg text-blue-accent">AthenaText</p>
-                    <p class="text-sm mt-1">Open: <span class="font-medium">Nurses Chat + Front Staff Chat</span></p>
-                </div>
-                <div class="bg-blue-secondary p-4 rounded-xl border border-blue-muted">
-                    <p class="font-bold text-lg text-blue-accent">Call Log (GSheet)</p>
-                    <p class="text-sm mt-1">Open personal tab. Ready to document.</p>
+                <div class="p-3 bg-blue-secondary rounded-lg">
+                    <p class="font-bold text-blue-accent">Comms Setup</p>
+                    <ul class="text-sm list-disc list-inside mt-1">
+                        <li>Join Nurse GMeet (Stay Active)</li>
+                        <li>Open AthenaText Group Chats</li>
+                    </ul>
                 </div>
             </div>
         </div>
 
-        <div class="hidden lg:block md:col-span-2"></div>
-
-        <div class="md:col-span-12 lg:col-span-10 bg-white p-8 rounded-2xl shadow-lg border-2 border-blue-accent relative">
-            <div class="flex items-center justify-between mb-6">
-                <h2 class="text-3xl font-extrabold text-blue-primary flex items-center gap-4"><span class="text-4xl">📞</span>Active Call Workflow</h2>
-                <div class="text-sm px-4 py-1.5 rounded-xl bg-blue-secondary text-blue-accent border border-blue-muted">
-                   Main Goal: Cater to Customer Needs
+        <div class="md:col-span-8 bg-white p-6 rounded-2xl shadow-lg border-2 border-blue-accent">
+            <h2 class="text-2xl font-bold text-blue-primary mb-4 flex items-center gap-2"><span>📞</span> Active Call Workflow</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="border border-blue-muted p-4 rounded-xl">
+                    <p class="font-bold text-blue-primary">1. Identify & Verify</p>
+                    <p class="text-xs text-blue-text mt-1 italic">"How may I assist you?"</p>
+                    <p class="text-sm mt-2">Confirm Name, DOB, and Phone Number in EHR.</p>
+                </div>
+                <div class="border border-blue-muted p-4 rounded-xl">
+                    <p class="font-bold text-blue-primary">2. Categorize Concern</p>
+                    <p class="text-sm mt-1">Determine if Scheduling, Refills, or Info Request.</p>
                 </div>
             </div>
-            
+            <div class="mt-4 p-4 bg-blue-primary text-white rounded-xl flex items-center justify-between">
+                <div>
+                    <p class="font-bold">Consult Protocol</p>
+                    <p class="text-sm opacity-90">Always refer to the Medical Assistant Handbook.</p>
+                </div>
+                <a href="https://docs.google.com/document/d/1Jj8ZuAlQuJUszhPi22DbhomjfX7aqPDT_T8D2W-yL_g/edit?tab=t.0#heading=h.36whwnd8o5to" target="_blank" class="bg-white text-blue-primary text-xs font-bold py-1 px-3 rounded uppercase">Open Handbook</a>
+            </div>
+        </div>
+
+        <div class="md:col-span-12 bg-white p-6 rounded-2xl shadow-sm border border-blue-muted">
+            <h2 class="text-2xl font-bold text-blue-primary mb-6">Common Tasks & Actions</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="border-l-4 border-blue-muted pl-4">
-                    <p class="font-bold text-blue-primary text-lg">1. Greeting & Verify</p>
-                    <p class="text-sm italic">"Thank you for calling UFMC, this is [Name]..."</p>
-                    <p class="text-sm mt-1 font-medium text-blue-accent">ID Patient: Name, DOB, Phone.</p>
+                <div class="p-4 bg-blue-secondary rounded-xl">
+                    <p class="font-bold text-blue-accent underline">Scheduling</p>
+                    <p class="text-sm mt-2">Book directly in EHR. For new patients, collect full demographics & insurance.</p>
                 </div>
-                <div class="border-l-4 border-blue-muted pl-4">
-                    <p class="font-bold text-blue-primary text-lg">2. Determine Concern</p>
-                    <p class="text-sm">Identify if scheduling, medication, registration, or information.</p>
+                <div class="p-4 bg-blue-secondary rounded-xl">
+                    <p class="font-bold text-blue-accent underline">Medication Refills</p>
+                    <p class="text-sm mt-2">Create **Patient Case** in Athena and route to the nursing bucket.</p>
                 </div>
-                <div class="border-l-4 border-blue-accent pl-4 bg-blue-secondary p-3 rounded-lg">
-                    <p class="font-bold text-blue-primary text-lg flex items-center gap-2"><span class="text-xl">📕</span>3. Refer to Handbook</p>
-                    <p class="text-xs mt-1">Consult [MA & Front Staff Handbook] for specific protocol.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="md:col-span-12 lg:col-span-8 bg-white p-6 rounded-2xl shadow-sm border border-blue-muted hover:border-blue-accent transition">
-            <h3 class="text-2xl font-semibold text-blue-primary mb-5 flex items-center gap-3"><span class="text-3xl">📋</span>Addressing Patient Needs</h3>
-            <div class="space-y-3">
-                <div class="flex gap-3 bg-blue-secondary p-4 rounded-xl items-center">
-                    <span class="text-2xl w-10 text-center">📅</span>
-                    <div>
-                        <p class="font-bold text-blue-accent">Scheduling / Rescheduling</p>
-                        <p class="text-sm">VA Actions: Check EHR availability. Verify details. Book appointment directly.</p>
-                    </div>
-                </div>
-                <div class="flex gap-3 bg-blue-secondary p-4 rounded-xl items-center hover:bg-white hover:shadow-inner transition">
-                    <span class="text-2xl w-10 text-center">➕</span>
-                    <div>
-                        <p class="font-bold text-blue-accent">New Patient Registration</p>
-                        <p class="text-sm">VA Actions: Collect demographics (ID, Insurance, Addr). Create patient profile in Athena.</p>
-                    </div>
-                </div>
-                <div class="flex gap-3 bg-blue-secondary p-4 rounded-xl items-center">
-                    <span class="text-2xl w-10 text-center">💊</span>
-                    <div>
-                        <p class="font-bold text-blue-accent">Medical Refills / Info Requests</p>
-                        <p class="text-sm">VA Actions: Direct resolution if administrative (policy/hours). <span class="font-medium text-red-600">Requires Clinical Escalation</span> for refills.</p>
-                    </div>
+                <div class="p-4 bg-blue-secondary rounded-xl">
+                    <p class="font-bold text-blue-accent underline">Internal Comms</p>
+                    <p class="text-sm mt-2">Use GMeet/AthenaText for Nurses. Use AthenaText for Office Staff.</p>
                 </div>
             </div>
         </div>
 
-        <div class="md:col-span-12 lg:col-span-4 bg-white p-6 rounded-2xl shadow-sm border border-blue-muted flex flex-col items-center text-center">
-            <span class="text-5xl mb-3">📝</span>
-            <h3 class="text-xl font-semibold text-blue-primary mb-3">Essential Documentation</h3>
-            <p class="text-sm mb-4">Every call must be documented immediately in the GSheet.</p>
-            <div class="bg-blue-secondary w-full p-4 rounded-xl text-left text-xs font-mono border border-blue-muted space-y-1">
-                <p>Date: YYYY-MM-DD HH:MM</p>
-                <p>Caller: John Doe (DOB: MM/DD/YY)</p>
-                <p>Reason: Reschedule</p>
-                <p>Action: Moved to 3PM Tuesday</p>
+        <div class="md:col-span-12 flex flex-col md:flex-row gap-6">
+            <div class="flex-1 bg-blue-text text-white p-6 rounded-2xl shadow-md">
+                <p class="text-xl font-bold mb-2 flex items-center gap-2"><span>📝</span> Call Documentation</p>
+                <p class="text-sm opacity-80 mb-4">Log Date, Caller, Reason, and Action for EVERY call.</p>
+                <a href="https://docs.google.com/spreadsheets/d/1zEuLw1jCDET6KyeC86r6lteM3cavHWLvq6ugvYmddWg/edit?usp=sharing" target="_blank" class="text-blue-muted font-bold hover:text-white underline text-sm">Open VA Call Log Sheet →</a>
             </div>
-        </div>
-
-        <div class="md:col-span-12 bg-white p-8 rounded-2xl shadow-lg border-l-8 border-blue-primary">
-            <h2 class="text-3xl font-extrabold text-blue-primary mb-6 flex items-center gap-4"><span class="text-4xl">🤝</span>Internal Team Collaboration</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <div class="p-5 border border-blue-muted rounded-xl bg-blue-secondary">
-                    <p class="font-bold text-blue-primary text-xl flex items-center gap-2"><span class="text-2xl">👩‍⚕️</span>Clinical Escalations (Nurses)</p>
-                    <p class="text-sm mb-3">For refill requests or medical advice requests.</p>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center text-xs">
-                        <p class="bg-white p-2 rounded-lg font-medium border border-blue-muted">AthenaText (Nurse Chat)</p>
-                        <p class="bg-white p-2 rounded-lg font-medium border border-blue-muted">GMeet (Voice Call)</p>
-                        <p class="bg-blue-primary text-white p-2 rounded-lg font-bold">RingCentral PARK Call (If req)</p>
-                    </div>
+            <div class="flex-1 bg-white p-6 rounded-2xl border-2 border-dashed border-blue-muted flex items-center justify-between">
+                <div>
+                    <h3 class="text-xl font-bold text-blue-primary">05:00 PM Close</h3>
+                    <p class="text-sm">Clockify Out & "Good Night" on G-Chat.</p>
                 </div>
-
-                <div class="p-5 border border-blue-muted rounded-xl bg-blue-secondary">
-                    <p class="font-bold text-blue-primary text-xl flex items-center gap-2"><span class="text-2xl">🏢</span>Office Logistics (In-Person)</p>
-                    <p class="text-sm mb-3">For physical patient concerns or office operational needs.</p>
-                    <div class="text-center">
-                        <p class="bg-white p-3 rounded-lg font-medium border border-blue-muted inline-block text-sm">AthenaText (Front Staff Chat)</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="md:col-span-12 bg-white p-6 rounded-2xl shadow-sm border border-blue-muted hover:border-blue-accent transition flex flex-col sm:flex-row sm:justify-between sm:items-center text-center sm:text-left">
-            <div>
-                <h2 class="text-2xl font-semibold text-blue-primary flex items-center gap-3"><span class="text-3xl">📴</span>17:00 EST Shift End</h2>
-                <p class="text-sm mt-1">Ensure all daily documentation is synced and saved.</p>
-            </div>
-            <div class="mt-4 sm:mt-0 flex gap-4 justify-center">
-                <div class="bg-blue-secondary px-4 py-2 rounded-lg border border-blue-muted text-sm">Clockify: <span class="font-bold">OUT</span></div>
-                <div class="bg-blue-secondary px-4 py-2 rounded-lg border border-blue-muted text-sm">G-Chat: "Good Night"</div>
+                <span class="text-4xl opacity-30">💤</span>
             </div>
         </div>
 
     </div>
 
-    <footer class="text-center mt-16 text-blue-text opacity-70 text-sm">
-        <p>© UFMC Virtual Front Desk - Internal Procedure Visualization</p>
+    <footer class="text-center mt-12 text-blue-text opacity-60 text-xs">
+        <p>© United Family Medical Center | Virtual Front Desk SOP Visualization</p>
     </footer>
 
 </body>
